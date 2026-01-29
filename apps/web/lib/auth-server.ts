@@ -3,12 +3,12 @@ import { headers } from "next/headers"
 export async function getServerSession() {
   const headersList = await headers()
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/get-session`,
+    `${process.env.NEXT_SERVER_URL}/api/auth/get-session`,
     {
       headers: {
         cookie: headersList.get("cookie") || "",
       },
-    }
+    },
   )
 
   if (!response.ok) {
