@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "cd ../.. && bun run --filter @grammar/api build && cd apps/web && next build",
+    "refresh-api": "cd ../.. && bun run --filter @grammar/api build",
     "start": "next start",
     "lint": "eslint"
   },
