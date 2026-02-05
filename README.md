@@ -7,7 +7,7 @@ Monorepo template with a Next.js web app and Hono API, managed with [Turborepo](
 - **[Hono](https://hono.dev/)** — Lightweight API framework; fast and works everywhere (Node, edge, Bun). The API exposes type-safe routes that the web app consumes via Hono RPC.
 - **[Zod](https://zod.dev/)** — Request and response validation and shared types. Keeps the API contract strict and gives clear errors when input is invalid.
 - **[Drizzle](https://orm.drizzle.team/)** — Type-safe SQL ORM with a small API, solid TypeScript inference, and a good migration workflow.
-- **Type-safe RPC (tRPC-style)** — The web app calls the API through [Hono RPC](https://hono.dev/docs/guides/rpc) (`hono/client` + `AppType` from `@grammar/api`). You get end-to-end types and autocomplete without running a separate tRPC server; run `bun run api:update-rpc` after API changes to refresh types.
+- **Type-safe RPC (tRPC-style)** — The web app calls the API through [Hono RPC](https://hono.dev/docs/guides/rpc) (`hono/client` + `AppType` from `@api`). You get end-to-end types and autocomplete without running a separate tRPC server; run `bun run api:update-rpc` after API changes to refresh types.
 
 ## Prerequisites
 
@@ -64,10 +64,10 @@ bun run api:update-rpc
 
 ```bash
 # API only
-bun run --filter @grammar/api dev
+bun run --filter @api dev
 
 # Web only
-bun run --filter @grammar/web dev
+bun run --filter @web dev
 ```
 
 ### API app (from `apps/api`)

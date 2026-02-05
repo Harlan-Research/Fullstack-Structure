@@ -7,7 +7,7 @@ import { openAPI } from "better-auth/plugins"
 export const auth = betterAuth({
   baseURL:
     process.env.NODE_ENV === "production"
-      ? "https://api.grammar.so"
+      ? (process.env.API_URL as string)
       : "http://localhost:3001",
   database: drizzleAdapter(db, {
     provider: "pg", // or "mysql", "sqlite"
@@ -25,14 +25,13 @@ export const auth = betterAuth({
   trustedOrigins: [
     "http://localhost:3000",
     "http://localhost:3001",
-    "https://app.grammar.so",
-    "https://api.grammar.so",
-    "https://grammar.so",
+    process.env.APP_URL as string,
+    process.env.API_URL as string,
   ],
   advanced: {
     crossSubDomainCookies: {
       enabled: process.env.NODE_ENV === "production",
-      domain: ".grammar.so",
+      domain: process.env.DOMAIN as string,
     },
   },
 })

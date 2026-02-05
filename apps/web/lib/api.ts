@@ -1,5 +1,5 @@
 import { hc } from "hono/client"
-import type { AppType } from "@grammar/api"
+import type { AppType } from "@api"
 import { getServerCookieHeaders } from "./auth-server"
 
 // Helper function to create authenticated client (server-side)
@@ -23,7 +23,7 @@ export const createOnboarding = async (
   adBudget: string,
   productType: string,
   mainGoal: string,
-  currentFollowers: string
+  currentFollowers: string,
 ) => {
   const client = await createAuthenticatedClient()
   type OnboardingRequest = Parameters<

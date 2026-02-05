@@ -7,10 +7,10 @@
     "build": "turbo run build",
     "start": "turbo run start",
     "dev": "turbo run dev",
-    "api:db:migrate": "bun run --filter @grammar/api db:migrate",
-    "api:db:generate": "bun run --filter @grammar/api db:generate",
-    "api:install": "bun install --filter @grammar/api",
-    "api:update-rpc": "bun run --filter @grammar/api build"
+    "api:db:migrate": "bun run --filter @backend/api db:migrate",
+    "api:db:generate": "bun run --filter @backend/api db:generate",
+    "api:install": "bun install --filter @backend/api",
+    "api:update-rpc": "bun run --filter @backend/api build"
   },
   "devDependencies": {
     "turbo": "^1.10.0",
